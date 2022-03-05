@@ -1,6 +1,7 @@
 .output_canvas{
-    width: 100%;
     max-width : 500px;
+    /* width: 1280px;
+    height: 720px; */
     display: none;
     text-align: center;
 }

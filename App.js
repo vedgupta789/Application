@@ -1,4 +1,5 @@
 const videoElement = document.getElementsByClassName('input_video')[0];
+const video = document.getElementById('input_video');
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const outputText = document.getElementsByClassName('output_text')[0];
 const loader = document.getElementById('loader');
@@ -34,8 +35,19 @@ hands.onResults(onResults);
 const camera = new Camera(videoElement, {
   onFrame: async () => {
     await hands.send({image: videoElement});
-  },
-  width: 1280,
-  height: 720
+  }, width:(canvasElement.width),height:(canvasElement.height)
 });
+
+// const setupCam = () =>{
+//     navigator.mediaDevices.getUserMedia({
+//         video:{width:600,height:400},
+//         audio : false
+//     })
+//     .then((stream) => {
+//         video.srcObject = stream;
+        
+//     });
+// };
+// setupCam();
+// hands.send({image: video});
 camera.start();

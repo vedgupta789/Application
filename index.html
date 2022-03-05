@@ -26,16 +26,29 @@
         </nav>
         <div class="container">
             <video class="input_video" style="display:none;"></video>
+            <!-- <video id="input_video" autoplay></video> -->
             <div id="loader" class="mt-3 mx-auto"></div>
             <div class="text-center">
-                <canvas class="output_canvas mx-auto" width="1280px "  height="720px"></canvas>
+                <canvas class="output_canvas mx-auto" ></canvas>
             </div>
             <div class="text-center"><br>
                 <h4>Output</h4>
                 <p class="output_text">Hello Ved</p>
             </div>
         </div>
-    
+        <script>
+            const mq = window.matchMedia( "(min-width: 500px)" );
+
+            if (mq.matches) {
+                document.getElementsByClassName('output_canvas')[0].setAttribute("width" , "1280px");
+                document.getElementsByClassName('output_canvas')[0].setAttribute("height" , "720px");
+            } else {
+                document.getElementsByClassName('output_canvas')[0].setAttribute("width" , "720px");
+                document.getElementsByClassName('output_canvas')[0].setAttribute("height" , "1280px");
+            }
+            // if (width<768){}
+            
+        </script>
         <script src="App.js"></script>
     </body>
 </html>
